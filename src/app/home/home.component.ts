@@ -12,4 +12,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
  show = true;
+
+ my_array = ['Rajesh','guru','jaypal','ranga','hiran','raghu', 'lakshmimadam'];
 }

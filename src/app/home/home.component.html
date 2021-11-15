@@ -2,10 +2,14 @@
     <div class="col-md-12">
         <h1 class="text-center">This is Home Component</h1>
    
-        <button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
+        <!--<button (click)="show = !show">{{show ? 'hide' : 'show'}}</button>
         show = {{show}}
         <br>
         <div *ngIf="show; else elseBlock">Text to show</div>
-        <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>
+        <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>-->
+
+        <ul style="list-style-type: none;" *ngFor="let name of my_array">
+            <li>Student Name: <span style="color: blue;">{{name}}</span></li>
+        </ul>
     </div>
 </div>
