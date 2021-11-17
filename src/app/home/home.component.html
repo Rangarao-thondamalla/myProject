@@ -8,8 +8,17 @@
         <div *ngIf="show; else elseBlock">Text to show</div>
         <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>-->
 
-        <ul style="list-style-type: none;" *ngFor="let name of my_array">
-            <li>Student Name: <span style="color: blue;">{{name}}</span></li>
+        <ul style="list-style-type: none;" *ngFor="let x of array">
+            <li>Student Name: <span style="color: blue;">{{x}}</span></li>
         </ul>
+        <p>This is parent to child data passing {{name}}</p>
+        <p>This is lastname:= '{{lastname}}'</p>
+        <p>This is role number {{rolnumber}}</p>
+
+        <div class="col-md-12 bg-green">
+                <button type="button" class="btn btn-primary" (click)="onClicked(mywifename)">Click Me</button>
+
+                <button type="button" class="btn btn-danger" (click)="counterincrese(counter)">Counter Increse</button>
+        </div>
     </div>
 </div>

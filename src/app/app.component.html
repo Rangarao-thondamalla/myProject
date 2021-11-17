@@ -5,12 +5,14 @@
     <main class="flex-shrink-0 mt-5">
       <div class="container">
         <div class="row mt-5 mb-5">
-            <app-home></app-home>
+            <app-home [name]="myname" lastname="thondamalla" [rolnumber]='number' [array]="my_array"
+             (onClick)="mywifenameinparent($event)" (counterincrement)="counterincrements($event)"></app-home>
+            This is from child component: <span class="text-danger">{{mywifenameparent}}</span>
+
+            this is cpounter data {{counterintialvalue}};
             <div appMyclass>This is test for Custom Directive</div>
+            
         </div>
       </div>
     </main>
 </div>
-
-
-
