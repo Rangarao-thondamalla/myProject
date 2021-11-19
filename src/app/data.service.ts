@@ -6,13 +6,13 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class DataService {
 
+ 
+  private lastdate = new BehaviorSubject('18/11/2021');
+  currentdate = this.lastdate.asObservable();
+
   constructor() { }
 
-  private classtime = new BehaviorSubject('8AM time in clock');
-
-  CurrentClasstime = this.classtime.asObservable();
-
-  changeClasstime(message: string){
-    this.classtime.next(message)
+  changeDate(date :any){
+    this.lastdate.next(date);
   }
 }

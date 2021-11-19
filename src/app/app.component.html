@@ -7,14 +7,16 @@
         <div class="row mt-5 mb-5">
             <app-home [name]="myname" lastname="thondamalla" [rolnumber]='number' [array]="my_array"
              (onClick)="mywifenameinparent($event)" (counterincrement)="counterincrements($event)"></app-home>
-            This is from child component: <span class="text-danger">{{mywifenameparent}}</span>
 
+            <div class="col-md-12 mt-3 mb-3 bg-success text-white">
+              <app-aboutus></app-aboutus>
+            </div> 
+
+            This is from child component: <span class="text-danger">{{mywifenameparent}}</span>
             this is cpounter data {{counterintialvalue}};
             <div appMyclass>This is test for Custom Directive</div>
-
             <div>
               <p>This is demo for changding the data based on @viewchild medthod {{message}}, {{mywifename}}</p>
-
               {{tutorials}}
             </div>
         </div>

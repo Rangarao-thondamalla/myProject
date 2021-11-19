@@ -30,14 +30,15 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
   show = true;
 
-  message:string;
-  subscription: Subscription;
-  constructor( private data :DataService) { }
+  date: any;
+  subscription : Subscription;
+  constructor( private data : DataService ) { }
 
-  ngOnInit(): void {
-    this.subscription = this.data.CurrentClasstime.subscribe(message => this.message = message )
+  ngOnInit(){
+
+    this.subscription = this.data.currentdate.subscribe(date =>this.date = date)
   }
-  ngOnDestroy() {
+  ngOnDestroy(){
     this.subscription.unsubscribe();
   }
 }

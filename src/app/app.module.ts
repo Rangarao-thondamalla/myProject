@@ -9,13 +9,17 @@ import { HomeComponent } from './home/home.component';
 import { MyclassDirective } from './myclass.directive';
 
 import { DataService} from './data.service';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ServicesComponent } from './services/services.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    MyclassDirective
+    MyclassDirective,
+    AboutusComponent,
+    ServicesComponent
   ],
   imports: [
     BrowserModule,
