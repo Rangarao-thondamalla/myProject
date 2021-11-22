@@ -1,4 +1,4 @@
-import { Component ,ViewChild , AfterViewInit} from '@angular/core';
+import { Component ,ViewChild , AfterViewInit, OnInit} from '@angular/core';
 import { HomeComponent } from './home/home.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 
@@ -7,7 +7,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
+export class AppComponent implements OnInit {
   myname = 'Rangarao';
   number = 12345769;
   my_array = ['Rajesh','guru','jaypal','ranga','hiran','raghu', 'lakshmimadam'];
@@ -22,16 +22,5 @@ export class AppComponent implements AfterViewInit {
     this.counterintialvalue = value;
   }
 
-  @ViewChild(HomeComponent) child :any;
-  message :string;
-  mywifename : string;
-
-  @ViewChild(NavBarComponent) children :any;
-  tutorials : string;
-
-  ngAfterViewInit(){
-    this.message = this.child.message;
-    this.mywifename = this.child.mywifename;
-    this.tutorials = this.children.tutorials;
-  }
+ ngOnInit(){}
 }

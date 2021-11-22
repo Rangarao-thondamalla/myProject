@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   @Input() rolnumber : number ;
   @Input() array : any[];
 
+  listdata =['Ranga','veera','guru','jhon','nicolos'];
 
   mywifename = "lakshmi";
 

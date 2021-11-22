@@ -11,6 +11,7 @@ import { MyclassDirective } from './myclass.directive';
 import { DataService} from './data.service';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ServicesComponent } from './services/services.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ServicesComponent } from './services/services.component';
     HomeComponent,
     MyclassDirective,
     AboutusComponent,
-    ServicesComponent
+    ServicesComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
