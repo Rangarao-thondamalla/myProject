@@ -12,6 +12,9 @@ import { DataService} from './data.service';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ServicesComponent } from './services/services.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { ContactComponent } from './contact/contact.component';
+
+import {AuthgaurdService} from './authgaurd.service';
 
 @NgModule({
   declarations: [
@@ -21,14 +24,15 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     MyclassDirective,
     AboutusComponent,
     ServicesComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [DataService],
+  providers: [DataService,AuthgaurdService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
