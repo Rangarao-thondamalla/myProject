@@ -13,11 +13,18 @@ export class HomeComponent implements OnInit, OnDestroy {
   @Input() rolnumber : number ;
   @Input() array : any[];
 
-  listdata =['Ranga','veera','guru','jhon','nicolos'];
+  listdata =['Ranga','veera','guru','jhon','nicolos','hello'];
 
-  mywifename = "lakshmi";
+  mywifename = "LAKShmi";
+
+  birthday = new Date(1988, 3, 15); // April 15, 1988 -- since month parameter is zero-based
+
+  a : number = 357.25;
+  b : number = 250.25789;
+  c : number = 2;
 
   counter = 1;
+  imageUrl: string = "";
 
   @Output() onClick  = new EventEmitter();
   @Output() counterincrement = new EventEmitter();

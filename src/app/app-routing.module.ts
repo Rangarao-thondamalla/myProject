@@ -10,9 +10,9 @@ import { OnlyLoggedInUsersGuard} from './only-logged-in-users.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
-  { path :'home', component :HomeComponent ,canActivate:[OnlyLoggedInUsersGuard] },
-  { path : 'aboutus', component: AboutusComponent, canActivate:[OnlyLoggedInUsersGuard]},
-  { path : 'appservices', component: ServicesComponent, canActivate:[OnlyLoggedInUsersGuard]},
+  { path :'home', component :HomeComponent},
+  { path : 'aboutus', component: AboutusComponent},
+  { path : 'appservices', component: ServicesComponent},
   { path : 'contact', component: ContactComponent},
   { path : '**',  component: PagenotfoundComponent}
 ];

@@ -10,7 +10,7 @@
             <ng-template #elseBlock>Alternate text while primary text is hidden</ng-template>-->
     
             <ul style="list-style-type: none;" *ngFor="let x of array">
-                <li>Student Name: <span style="color: blue;">{{x}}</span></li>
+                <li>Student Name: <span style="color: blue;"> {{x | uppercase }}</span></li>
             </ul>
             <p>This is parent to child data passing {{name}}</p>
             <p>This is lastname:= '{{lastname}}'</p>
@@ -35,6 +35,14 @@
                 </ul>
                 <div appMyclass>This is test for Custom Directive</div>
             </div>
+
+            <p>The hero's birthday is {{ birthday | date:"MM/dd/yy" }}</p>
+            {{mywifename | uppercase }}
+            {{mywifename | lowercase }}
+            <p>Cost of the product : {{a | currency:'₹' }}</p>
+            <p>my product : {{b | number: '1.0'}}</p>
+            <p>Student : {{ c | percent}}</p>
+            <img [src]="imageUrl | default:'https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg'"/>
         </div>
     </div>
 </div>

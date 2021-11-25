@@ -15,6 +15,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
 
 import {AuthgaurdService} from './authgaurd.service';
+import { DefaultPipe } from './default.pipe';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import {AuthgaurdService} from './authgaurd.service';
     AboutusComponent,
     ServicesComponent,
     PagenotfoundComponent,
-    ContactComponent
+    ContactComponent,
+    DefaultPipe
   ],
   imports: [
     BrowserModule,
