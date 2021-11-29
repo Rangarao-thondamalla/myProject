@@ -1,1 +1,13 @@
-<p>services works!</p>
+<div class="container bg-secondary text-white">
+    <div class="row mt-5 mb-5 p-3">
+        <div class="col-md-12">
+            <p>services works!</p>
+            <p>User Id is <b style="color: rgb(255, 0, 0);">{{userId}}</b> </p>
+            <p> Id is <b style="color: rgb(255, 0, 0);">{{id}}</b> </p>
+            <p>title is <b style="color: rgb(255, 0, 0);">{{title}}</b> </p>
+            <p>completed is <b style="color: rgb(255, 0, 0);">{{completed}}</b> </p>
+
+            {{data | json}}
+        </div>
+    </div>
+</div>

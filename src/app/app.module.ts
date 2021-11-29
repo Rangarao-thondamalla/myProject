@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,8 +15,9 @@ import { ServicesComponent } from './services/services.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
 
-import {AuthgaurdService} from './authgaurd.service';
+import { AuthgaurdService } from './authgaurd.service';
 import { DefaultPipe } from './default.pipe';
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { DefaultPipe } from './default.pipe';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [DataService,AuthgaurdService],
   bootstrap: [AppComponent]
