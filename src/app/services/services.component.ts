@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Users } from '../users';
+import { UserService } from '../user.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-services',
@@ -8,21 +11,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ServicesComponent implements OnInit {
 
-  constructor( private http : HttpClient) { }
-  data : object;
-  userId : number;
-  id : number;
-  title : string;
-  completed : boolean;
-  users;
+  constructor( private http : HttpClient, private userService : UserService) { }
+
+ //private posts : Observable<Users>;
+
+ posts;
+
+ //user : Users[]=[];
+
   ngOnInit(): void {
-    this.users = this.http.get<any>('https://jsonplaceholder.typicode.com/todos/2').subscribe(response => {
-    this.data = response;
-    this.userId = response.userId;
-    this.id= response.id;
-    this.title = response.title;
-    this.completed = response.completed;
-    console.log(this.data);
+  this.userService.getUsers().subscribe( (response : Users)=> {
+    this.posts = response;
   });
   }
 
