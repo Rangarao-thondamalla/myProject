@@ -15,14 +15,19 @@ export class ServicesComponent implements OnInit {
 
  //private posts : Observable<Users>;
 
- posts;
-
- //user : Users[]=[];
+ users : Users[]=[];
 
   ngOnInit(): void {
-  this.userService.getUsers().subscribe( (response : Users)=> {
-    this.posts = response;
+  this.userService.getUsers().subscribe( (response : Users[])=> {
+    this.users = response;
   });
-  }
+}
+deleteposts(id:number):void{
+  this.userService.deleteusers(id)
+  .subscribe(data => {
+    this.users = this.users.filter(item => item.id !== id);
+    console.log('Post deleted successfully!');
+  });
+}
 
 }

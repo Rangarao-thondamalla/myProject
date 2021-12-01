@@ -13,12 +13,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr *ngFor="let data of posts">
+                            <tr *ngFor="let data of users">
                                 <td >{{data.userId}}</td>
                                 <td >{{data.id}}</td>
                                 <td >{{data.title}}</td>
                                 <td >{{data.completed}}</td>
-                                <td> <button type="button" class="btn btn-danger">Delete</button></td>
+                                <td> <button type="button" class="btn btn-danger" (click)="deleteposts(data.id)">Delete</button></td>
                             </tr>
                         </tbody>
                 </table>

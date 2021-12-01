@@ -8,11 +8,17 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
+
+  url = 'https://jsonplaceholder.typicode.com/todos';
+
   constructor(private http : HttpClient) { }
   isLoggedIn(): boolean {
     return false;
   }
-  getUsers():Observable<Users>{
-    return this.http.get<Users>('https://jsonplaceholder.typicode.com/todos');
+  getUsers():Observable<any>{ 
+    return this.http.get(this.url);
+  }
+  deleteusers(id:number):Observable<Users>{
+    return this.http.delete<Users>(this.url + '/'+ id);
   }
 }
