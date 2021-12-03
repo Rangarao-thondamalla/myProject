@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row mt-5 pt-5">
+        <div class="col-md-12">
+            <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+                <div class="form-row">
+                <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="firstname" placeholder="Name" 
+                        required [(ngModel)]="model.firstname" #firstname="ngModel" 
+                        [ngClass]="{ 'is-invalid': f.submitted && firstname.invalid }">
+                </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Email</label>
+                    <input type="email" class="form-control" name="email" placeholder="Email">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" name="address" placeholder="1234 Main St">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">City</label>
+                    <input type="text" class="form-control" name="city">
+                  </div>
+                  <div class="form-group col-md-4">
+                    <label for="inputState">State</label>
+                    <select id="inputState" class="form-control" name="state">
+                      <option selected>Choose...</option>
+                      <option value="ap">Andhra Pradesh</option>
+                      <option value="mp">Madhya Pradesh</option>
+                      <option value="up">Uttar Pradesh</option>
+                      <option value="ts">Telangana</option>
+                      <option value="kn">Karnataka</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-md-2">
+                    <label for="inputZip">ZipCode</label>
+                    <input type="text" class="form-control" name="zipcode">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Sign in</button>
+              </form>
+              {{ model | json }}
+        </div>
+    </div>
+</div>

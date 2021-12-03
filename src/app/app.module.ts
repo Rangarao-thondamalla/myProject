@@ -15,8 +15,12 @@ import { ServicesComponent } from './services/services.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ContactComponent } from './contact/contact.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { FilterPipeModule } from 'ngx-filter-pipe';
+
 import { AuthgaurdService } from './authgaurd.service';
 import { DefaultPipe } from './default.pipe';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -29,13 +33,16 @@ import { DefaultPipe } from './default.pipe';
     ServicesComponent,
     PagenotfoundComponent,
     ContactComponent,
-    DefaultPipe
+    DefaultPipe,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule,
+    FilterPipeModule
   ],
   providers: [DataService,AuthgaurdService],
   bootstrap: [AppComponent]

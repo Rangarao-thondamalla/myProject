@@ -29,5 +29,5 @@ deleteposts(id:number):void{
     console.log('Post deleted successfully!');
   });
 }
-
+p: number = 1;
 }
