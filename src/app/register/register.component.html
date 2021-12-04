@@ -4,32 +4,48 @@
             <form name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
                 <div class="form-row">
                 <div class="form-group col-md-6">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="firstname" placeholder="Name" 
-                        required [(ngModel)]="model.firstname" #firstname="ngModel" 
-                        [ngClass]="{ 'is-invalid': f.submitted && firstname.invalid }">
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" name="firstname" placeholder="Name" 
+                    required [(ngModel)]="model.firstname" #firstname="ngModel" minlength="4" maxlength="8">
+                    <div *ngIf="firstname.invalid && (firstname.dirty || firstname.touched)" class="alert">
+                        <div *ngIf="firstname.errors?.['required']">
+                                  Name is required.
+                            </div>
+                          <div *ngIf="firstname.errors?.['minlength']">
+                             Name must be at least 4 characters long.
+                          </div>
+                    </div>
+                  </div>
                 </div>
                   <div class="form-group col-md-6">
                     <label for="inputEmail4">Email</label>
-                    <input type="email" class="form-control" name="email" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email" required 
+                    [(ngModel)]="model.email" #email= "ngModel" [ngClass]="{'is-invalid': f.submitted && email.invalid }" 
+                    pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" >
                   </div>
                   <div class="form-group col-md-6">
                     <label for="inputPassword4">Password</label>
-                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <input type="password" class="form-control" name="password" placeholder="Password" required 
+                    [(ngModel)]="model.password" #password="ngModel" [ngClass]="{'is-invalid' : f.submitted && password.invalid}"
+                     pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$">
                   </div>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputAddress">Address</label>
-                  <input type="text" class="form-control" name="address" placeholder="1234 Main St">
+                  <input type="text" class="form-control" name="address" placeholder="1234 Main St" required
+                  [(ngModel)]="model.address" #address="ngModel" [ngClass]="{'is-invalid' : f.submitted && address.invalid}">
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="inputCity">City</label>
-                    <input type="text" class="form-control" name="city">
+                    <input type="text" class="form-control" name="city" required 
+                    [(ngModel)]="model.city" #city="ngModel" [ngClass]="{'is-invalid' : f.submitted && city.invalid}">
                   </div>
                   <div class="form-group col-md-4">
                     <label for="inputState">State</label>
-                    <select id="inputState" class="form-control" name="state">
+                    <select id="inputState" class="form-control" name="state" required 
+                    [(ngModel)]="model.state" #state="ngModel" [ngClass]="{'is-invalid' : f.submitted && state.invalid}">
                       <option selected>Choose...</option>
                       <option value="ap">Andhra Pradesh</option>
                       <option value="mp">Madhya Pradesh</option>
@@ -40,18 +56,22 @@
                   </div>
                   <div class="form-group col-md-2">
                     <label for="inputZip">ZipCode</label>
-                    <input type="text" class="form-control" name="zipcode">
+                    <input type="text" class="form-control" name="zipcode" required 
+                    [(ngModel)]="model.zipcode" #zipcode="ngModel" [ngClass]="{'is-invalid' : f.submitted && zipcode.invalid}"
+                     pattern="^[0-9]*$" maxlength="6" minlength="5">
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="gridCheck">
+                    <input class="form-check-input" type="checkbox" name="gridCheck" required 
+                    [(ngModel)]="model.gridCheck" #gridCheck="ngModel" [ngClass]="{'is-invalid' : f.submitted && gridCheck.invalid}">
                     <label class="form-check-label" for="gridCheck">
                       Check me out
                     </label>
                   </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="submit" class="btn btn-primary">Sign in</button>&nbsp;
+                <button type="submit" class="btn btn-primary" (click)="f.resetForm()">Reset</button>
               </form>
               {{ model | json }}
         </div>

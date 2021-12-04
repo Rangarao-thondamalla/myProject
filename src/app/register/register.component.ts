@@ -14,6 +14,6 @@ export class RegisterComponent implements OnInit {
   
   model: any = {};
   onSubmit() {
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.model))
+    console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.model));
   }
 }
