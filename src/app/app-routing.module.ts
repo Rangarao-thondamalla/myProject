@@ -8,6 +8,7 @@ import { ContactComponent } from './contact/contact.component';
 import { AuthgaurdService } from './authgaurd.service';
 import { OnlyLoggedInUsersGuard} from './only-logged-in-users.guard';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path : 'appservices', component: ServicesComponent},
   { path : 'contact', component: ContactComponent},
   { path : 'register', component: RegisterComponent},
+  { path: 'reactiveforms', component : ReactiveformsComponent},
   { path : '**',  component: PagenotfoundComponent}
 ];
 

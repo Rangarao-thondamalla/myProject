@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { MyclassDirective } from './myclass.directive';
@@ -21,6 +22,7 @@ import { FilterPipeModule } from 'ngx-filter-pipe';
 import { AuthgaurdService } from './authgaurd.service';
 import { DefaultPipe } from './default.pipe';
 import { RegisterComponent } from './register/register.component';
+import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { RegisterComponent } from './register/register.component';
     PagenotfoundComponent,
     ContactComponent,
     DefaultPipe,
-    RegisterComponent
+    RegisterComponent,
+    ReactiveformsComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     HttpClientModule,
     NgxPaginationModule,
-    FilterPipeModule
+    FilterPipeModule,
+    ReactiveFormsModule
   ],
   providers: [DataService,AuthgaurdService],
   bootstrap: [AppComponent]
