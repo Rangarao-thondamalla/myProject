@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup , FormControl, Validators, FormBuilder } from '@angular/forms';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-reactiveforms',
@@ -11,7 +12,7 @@ export class ReactiveformsComponent implements OnInit {
  
   studentForm:FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.studentForm = this.formBuilder.group({
@@ -22,18 +23,25 @@ export class ReactiveformsComponent implements OnInit {
       checkbox:new FormControl('',[Validators.required]),
       });
   }
+  validateForm() { 
+
+    for(let i in this.studentForm.controls)
+        this.studentForm.controls[i].markAsTouched();
+    
+    }
   get f() { return this.studentForm.controls; }
-  register(){
-    this.submitted = true;
+  register(user: any): void{
+    if (this.studentForm.valid) {
+      let url = "https://5df7ba4a4fdcb20014a483cc.mockapi.io/reactiveforms";     
+          const headers = new HttpHeaders()
+            .set('Authorization', 'my-auth-token')
+            .set('Content-Type', 'application/json');
+        this.http.post(url, user).subscribe(res => console.log("Data Post Done"));
+      
+    }
+    else{this.validateForm()}
+    }
 
-        // stop here if form is invalid
-        if (this.studentForm.invalid) {
-            return;
-        }
-
-        // display form values on success
-        alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.studentForm.value, null, 4));
-  }
   onReset() {
     this.submitted = false;
     this.studentForm.reset();
