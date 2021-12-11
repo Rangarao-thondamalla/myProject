@@ -37,7 +37,7 @@ import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component'
     ContactComponent,
     DefaultPipe,
     RegisterComponent,
-    ReactiveformsComponent
+    ReactiveformsComponent,
   ],
   imports: [
     BrowserModule,
