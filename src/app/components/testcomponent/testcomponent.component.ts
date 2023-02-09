@@ -1,6 +1,6 @@
 import {Component, ViewChild, OnInit} from '@angular/core';
 import {TributeOptions} from 'tributejs';
-import {FormBuilder} from '@angular/forms';
+import {UntypedFormBuilder} from '@angular/forms';
 import {NgxTributeDirective} from '../../../../node_modules/ngx-tribute/lib/ngx-tribute.directive';
 import { AngularEditorConfig } from '@kolkov/angular-editor';
 
@@ -78,7 +78,7 @@ form = this.fb.group({
 });
 customControl = this.fb.control('Initial state');
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit(): void {
     

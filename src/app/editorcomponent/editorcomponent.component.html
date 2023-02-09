@@ -1,9 +1,26 @@
-<div class="NgxEditor__Wrapper">
-    <ngx-editor-menu [editor]="editor"> </ngx-editor-menu>
-    <ngx-editor
-      [editor]="editor"
-      [ngModel]="html"
-      [disabled]="false"
-      [placeholder]="'Type here...'"
-    ></ngx-editor>
-  </div>
+<div class="container">
+	<h2 class="title">Full featured editor demo</h2>
+
+	<div class="content">
+		<div class="display">
+			<!-- <div class="logo">
+				<img src="../assets/ngx-editor.svg" />
+				<div class="subtitle">Rich Text Editor for angular using ProseMirror</div>
+			</div> -->
+		</div>
+
+		<form [formGroup]="form">
+			<div class="editor">
+				<ngx-editor-menu [editor]="editor" [toolbar]="toolbar">
+				</ngx-editor-menu>
+				<ngx-editor [editor]="editor" formControlName="editorContent" [ngxTribute]="options">
+				</ngx-editor>
+			</div>
+		</form>
+
+		<!-- <div class="editor">
+      <ngx-editor [editor]="editor" [(ngModel)]="editordoc">
+      </ngx-editor>
+    </div> -->
+	</div>
+</div>

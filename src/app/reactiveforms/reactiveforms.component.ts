@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup , FormControl, Validators, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup , UntypedFormControl, Validators, UntypedFormBuilder } from '@angular/forms';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Component({
@@ -10,17 +10,17 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 export class ReactiveformsComponent implements OnInit {
 
  
-  studentForm:FormGroup;
+  studentForm:UntypedFormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private http: HttpClient) { }
+  constructor(private formBuilder: UntypedFormBuilder, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.studentForm = this.formBuilder.group({
-      name:new FormControl('',[Validators.required,Validators.minLength(3)]),
-      email:new FormControl('',[Validators.required]),
-      password:new FormControl('',[Validators.required]),
-      gender:new FormControl('',[Validators.required]),
-      checkbox:new FormControl('',[Validators.required]),
+      name:new UntypedFormControl('',[Validators.required,Validators.minLength(3)]),
+      email:new UntypedFormControl('',[Validators.required]),
+      password:new UntypedFormControl('',[Validators.required]),
+      gender:new UntypedFormControl('',[Validators.required]),
+      checkbox:new UntypedFormControl('',[Validators.required]),
       });
   }
   validateForm() { 
