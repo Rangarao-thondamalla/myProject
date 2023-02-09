@@ -1,0 +1,31 @@
+{
+  "name": "ngx-tribute",
+  "version": "1.5.1",
+  "peerDependencies": {
+    "@angular/common": ">=6.0.0 <9.0.0",
+    "@angular/core": ">=6.0.0 <9.0.0",
+    "@angular/forms": ">=6.0.0 <9.0.0",
+    "tributejs": "^3.3.5"
+  },
+  "description": "Angular 2+ library for @mentions. Supports contenteditable and Reactive Forms.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ladderio/ngx-tribute.git"
+  },
+  "keywords": [
+    "mentions",
+    "mention",
+    "tribute",
+    "angular",
+    "angular2"
+  ],
+  "author": "Adrian Slipko <slipko.adrian@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ladderio/ngx-tribute/issues"
+  },
+  "homepage": "https://github.com/ladderio/ngx-tribute#readme"
+}

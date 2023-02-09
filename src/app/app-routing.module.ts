@@ -9,6 +9,8 @@ import { AuthgaurdService } from './authgaurd.service';
 import { OnlyLoggedInUsersGuard} from './only-logged-in-users.guard';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
+import { TestcomponentComponent } from './components/testcomponent/testcomponent.component';
+import { EditorcomponentComponent } from './editorcomponent/editorcomponent.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,6 +20,8 @@ const routes: Routes = [
   { path : 'contact', component: ContactComponent},
   { path : 'register', component: RegisterComponent},
   { path: 'reactiveforms', component : ReactiveformsComponent},
+  { path: 'testcomponent', component : TestcomponentComponent},
+  { path: 'editorcomponent', component : EditorcomponentComponent},
   { path : '**',  component: PagenotfoundComponent}
 ];
 

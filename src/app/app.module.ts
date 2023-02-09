@@ -23,7 +23,11 @@ import { AuthgaurdService } from './authgaurd.service';
 import { DefaultPipe } from './default.pipe';
 import { RegisterComponent } from './register/register.component';
 import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component';
-
+import { TestcomponentComponent } from './components/testcomponent/testcomponent.component';
+import { NgxTributeModule } from 'ngx-tribute';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+import { NgxEditorModule } from 'ngx-editor';
+import { EditorcomponentComponent } from './editorcomponent/editorcomponent.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +42,8 @@ import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component'
     DefaultPipe,
     RegisterComponent,
     ReactiveformsComponent,
+    TestcomponentComponent,
+    EditorcomponentComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +52,10 @@ import { ReactiveformsComponent } from './reactiveforms/reactiveforms.component'
     HttpClientModule,
     NgxPaginationModule,
     FilterPipeModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxTributeModule,
+    AngularEditorModule,
+    NgxEditorModule
   ],
   providers: [DataService,AuthgaurdService],
   bootstrap: [AppComponent]
